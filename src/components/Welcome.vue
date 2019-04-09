@@ -1,6 +1,6 @@
 <template>
-    <v-container pb-0>
-        <v-layout text-xs-center wrap>
+    <v-container pa-0>
+        <v-layout text-xs-center wrap class="mb-0">
             <v-flex xs12>
                 <v-icon x-large color="blue">message</v-icon>
             </v-flex>

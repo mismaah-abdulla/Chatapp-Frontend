@@ -2,8 +2,8 @@
   <v-app>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <span>{{ app.name }}</span>
+        <span class="font-weight-light"></span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
@@ -16,23 +16,24 @@
     </v-toolbar>
 
     <v-content>
-      <HelloWorld/>
+      <router-view :app="app" ></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import Login from './components/Login'
+import data from '@/data.js'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    Login
   },
-  data () {
-    return {
-      //
-    }
-  }
+  data: () => ({
+      app: data
+  })
 }
 </script>

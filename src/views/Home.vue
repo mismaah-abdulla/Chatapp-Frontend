@@ -1,17 +1,17 @@
 <template>
   <v-container>
-    <HelloWorld />
+    <Welcome />
     <Login />
   </v-container>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld'
+import Welcome from '../components/Welcome'
 import Login from '../components/Login'
 
 export default {
   components: {
-    HelloWorld,
+    Welcome,
     Login
   }
 }

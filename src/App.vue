@@ -22,8 +22,6 @@
 </template>
 
 <script>
-import Welcome from './components/Welcome'
-import Login from './components/Login'
 import data from '@/data.js'
 
 export default {

@@ -1,16 +1,21 @@
 <template>
-    <v-container pb-0>
-        <v-layout text-xs-center wrap>
+    <v-container>
+        <v-layout text-xs-center wrap justify-center>
             <v-flex xs12>
                 <v-icon x-large color="blue">message</v-icon>
-            </v-flex>
-            <v-flex mb-4>
                 <h1 class="display-2 font-weight-regular mb-3">
-                Welcome to {{ app.name }}
+                About
                 </h1>
-                <p class="subheading font-weight-regular">
-                {{ app.description }}
-                </p>
+            </v-flex>
+            <v-flex shrink>
+                <v-card class="elevation-1">    
+                    <div pa-2 class="v-card__text subheading font-weight-regular">
+                    {{ app.name }} is a web chat application made with 
+                    Vue.js and Vuetify
+                    by Mismaah Abdulla<br />
+                    mismaahabdulla@gmail.com
+                    </div>
+                </v-card>
           </v-flex>
         </v-layout>
     </v-container>

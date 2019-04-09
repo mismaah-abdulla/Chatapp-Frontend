@@ -1,17 +1,16 @@
 <template>
     <v-app>
-        <v-toolbar app>
-            <v-toolbar-title class="headline text-uppercase">
+        <v-toolbar app dark height="40px">
+            <v-toolbar-title color="primary" class="headline text-uppercase">
                 <span>{{ app.name }}</span>
-                <span class="font-weight-light"></span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn flat href="#/">
+            <v-btn flat color="accent" href="#/">
                 Home
             </v-btn>
-            <v-btn flat href="https://github.com/mismaah-abdulla/chatapp" target="_blank">
+            <v-btn flat color="accent" href="https://github.com/mismaah-abdulla/chatapp" target="_blank">
                 GitHub</v-btn>
-            <v-btn flat href="#/about">
+            <v-btn flat color="accent" href="#/about">
                 About
             </v-btn>
         </v-toolbar>

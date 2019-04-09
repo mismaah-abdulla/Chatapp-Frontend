@@ -2,7 +2,7 @@
     <v-container pa-0>
         <v-layout text-xs-center wrap class="mb-0">
             <v-flex xs12>
-                <v-icon x-large color="blue">message</v-icon>
+                <v-icon x-large color="primary">message</v-icon>
             </v-flex>
             <v-flex mb-4>
                 <h1 class="display-2 font-weight-regular mb-3">

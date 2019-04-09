@@ -7,7 +7,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
-        flat
+        flat    
         href="#/about"
       >
         <span class="mr-2">About</span>

@@ -30,8 +30,6 @@ import data from '@/data.js'
 export default {
     name: 'App',
     components: {
-        Welcome,
-        Login
     },
     data: () => ({
         app: data

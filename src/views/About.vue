@@ -8,9 +8,9 @@
                 </h1>
             </v-flex>
             <v-flex shrink>
-                <v-card class="elevation-1">    
+                <v-card class="elevation-1">
                     <div pa-2 class="v-card__text subheading font-weight-regular">
-                    {{ app.name }} is a web chat application made with 
+                    {{ app.name }} is a web chat application made with
                     Vue.js and Vuetify
                     by Mismaah Abdulla<br />
                     mismaahabdulla@gmail.com
@@ -25,8 +25,8 @@
 import data from '@/data.js'
 
 export default {
-  data: () => ({
-      app: data
-  })
+    data: () => ({
+        app: data
+    })
 }
 </script>

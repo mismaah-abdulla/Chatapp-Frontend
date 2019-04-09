@@ -28,13 +28,13 @@ import Login from './components/Login'
 import data from '@/data.js'
 
 export default {
-  name: 'App',
-  components: {
-    Welcome,
-    Login
-  },
-  data: () => ({
-      app: data
-  })
+    name: 'App',
+    components: {
+        Welcome,
+        Login
+    },
+    data: () => ({
+        app: data
+    })
 }
 </script>

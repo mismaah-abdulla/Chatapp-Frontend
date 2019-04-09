@@ -56,8 +56,8 @@
 </template>
 
 <script>
-    export default {
-        data: () => ({
+export default {
+    data: () => ({
         valid: true,
         name: '',
         nameRules: [
@@ -77,12 +77,12 @@
             'Item 4'
         ],
         checkbox: false
-        }),
+    }),
 
-        methods: {
+    methods: {
         validate () {
             if (this.$refs.form.validate()) {
-            this.snackbar = true
+                this.snackbar = true
             }
         },
         reset () {
@@ -91,8 +91,8 @@
         resetValidation () {
             this.$refs.form.resetValidation()
         }
-        }
     }
+}
 </script>
 
 <style>

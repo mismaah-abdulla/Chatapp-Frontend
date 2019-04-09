@@ -10,9 +10,9 @@ import Welcome from '../components/Welcome'
 import Login from '../components/Login'
 
 export default {
-  components: {
-    Welcome,
-    Login
-  }
+    components: {
+        Welcome,
+        Login
+    }
 }
 </script>

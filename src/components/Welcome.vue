@@ -20,9 +20,9 @@
 import data from '@/data.js'
 
 export default {
-  data: () => ({
-      app: data
-  })
+    data: () => ({
+        app: data
+    })
 }
 </script>
 

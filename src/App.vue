@@ -8,10 +8,9 @@
       <v-spacer></v-spacer>
       <v-btn
         flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
+        href="#/about"
       >
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">About</span>
       </v-btn>
     </v-toolbar>
 

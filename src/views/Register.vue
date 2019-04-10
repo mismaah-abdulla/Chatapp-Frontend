@@ -10,7 +10,7 @@
             <v-flex xs12 sm8 md4>
                 <v-card class="pa-3">
                     <v-form ref="form" v-model="valid" lazy-validation>
-                        <v-text-field
+                        <v-text-field color="secondary"
                         v-model="name"
                         :counter="10"
                         :rules="nameRules"
@@ -18,14 +18,14 @@
                         required
                         ></v-text-field>
 
-                        <v-text-field
+                        <v-text-field color="secondary"
                         v-model="email"
                         :rules="emailRules"
                         label="E-mail"
                         required
                         ></v-text-field>
 
-                        <v-text-field
+                        <v-text-field color="secondary"
                         v-model="password"
                         :rules="passwordRules"
                         :type="'password'"
@@ -33,7 +33,7 @@
                         required
                         ></v-text-field>
 
-                        <v-checkbox
+                        <v-checkbox color="secondary"
                         v-model="checkbox"
                         :rules="[v => !!v || 'You must agree to continue!']"
                         label="I agree to the terms and conditions"

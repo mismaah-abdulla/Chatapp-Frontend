@@ -3,13 +3,14 @@
         <v-layout align-center justify-center>
             <v-flex xs12 sm8 md4>
                 <v-card class="elevation-4">
-                    <v-toolbar height="50px" dark color="primary">
+                    <v-toolbar height="40px" dark color="primary">
                         <v-toolbar-title class="pa-0">Login</v-toolbar-title>
                     </v-toolbar>
                     <v-card-text class="pb-0">
                         <v-form>
-                        <v-text-field prepend-icon="person" name="login" label="Username" type="text"></v-text-field>
-                        <v-text-field class="pt-0" id="password" prepend-icon="lock" name="password" label="Password" type="password"></v-text-field>
+                        <!-- icon is person -->
+                        <v-text-field color="secondary" prepend-icon="account_box" name="login" label="Username" type="text"></v-text-field>
+                        <v-text-field color="secondary" class="pt-0" id="password" prepend-icon="lock" name="password" label="Password" type="password"></v-text-field>
                         </v-form>
                     </v-card-text>
                     <v-card-actions>

@@ -1,7 +1,7 @@
 <template>
     <v-layout>
             <v-navigation-drawer absolute dark :width="250" permanent>
-                    <v-toolbar flat>
+                    <v-toolbar >
                         <v-list>
                             <v-list-tile>
                             <v-list-tile-title class="subheading font-weight-medium" >

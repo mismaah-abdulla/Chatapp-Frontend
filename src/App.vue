@@ -8,8 +8,6 @@
             <v-btn flat color="accent" href="#/">
                 Home
             </v-btn>
-            <v-btn flat color="accent" href="https://github.com/mismaah-abdulla/chatapp" target="_blank">
-                GitHub</v-btn>
             <v-btn flat color="accent" href="#/about">
                 About
             </v-btn>
@@ -17,6 +15,13 @@
 
         <v-content>
             <router-view :app="app" ></router-view>
+            <v-btn href="https://github.com/mismaah-abdulla/chatapp" target="_blank"
+              flat
+              fixed
+              bottom
+              right
+              fab
+            ><img src="/githubLogo.png" alt="" style="width:50px;height:50px"></v-btn>
         </v-content>
     </v-app>
 </template>
@@ -33,3 +38,8 @@ export default {
     })
 }
 </script>
+
+<style>
+
+</style>
+

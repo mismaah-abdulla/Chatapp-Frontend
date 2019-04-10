@@ -6,7 +6,7 @@
             </v-flex>
             <v-flex mb-4>
                 <h1 class="display-2 font-weight-regular mb-3">
-                Welcome to {{ app.name }}
+                Welcome to <span class="primary--text">{{ app.name }}</span>
                 </h1>
                 <p class="subheading font-weight-regular">
                 {{ app.description }}

@@ -2,7 +2,7 @@
     <v-app>
         <v-toolbar app dark height="40px" class="px-5">
             <img src="/Logo_deep_orange.png" style="width:40px;height:40px">
-            <v-toolbar-title color="primary" class="headline text-uppercase">
+            <v-toolbar-title color="primary" class="headline">
                 <span>{{ app.name }}</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>

@@ -1,8 +1,8 @@
 <template>
-  <v-container>
-    <ChatNav />
-    <Chat />
-  </v-container>
+    <v-container>
+        <Chat />
+        <ChatNav />
+    </v-container>
 </template>
 
 <script>

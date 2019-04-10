@@ -2,7 +2,7 @@
     <v-container>
         <v-layout text-xs-center wrap justify-center>
             <v-flex xs12>
-                <img src="../../Logo_deep_orange.png" alt="Deep Orange Logo">
+                <img src="/Logo_deep_orange.png" alt="Deep Orange Logo">
                 <h1 class="display-2 font-weight-regular mb-3">
                 About
                 </h1>

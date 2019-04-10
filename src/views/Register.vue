@@ -2,7 +2,7 @@
     <v-container>
         <v-layout justify-center wrap>
             <v-flex xs12 text-xs-center>
-                <img src="../../Logo_deep_orange.png" alt="Deep Orange Logo">
+                <img src="/Logo_deep_orange.png" alt="Deep Orange Logo">
                 <h1 class="display-2 font-weight-regular mb-3">
                 Register
                 </h1>
@@ -73,7 +73,7 @@ export default {
         email: '',
         emailRules: [
             v => !!v || 'E-mail is required',
-            v => /.+@.+/.test(v) || 'E-mail must be valid'
+            v => /\S+@\S+\.\S+/.test(v) || 'E-mail must be valid'
         ],
         passwordRules: [
             v => !!v || 'Password is required',

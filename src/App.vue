@@ -1,6 +1,7 @@
 <template>
     <v-app>
-        <v-toolbar app dark height="40px">
+        <v-toolbar app dark height="40px" class="px-5">
+            <img src="/Logo_deep_orange.png">
             <v-toolbar-title color="primary" class="headline text-uppercase">
                 <span>{{ app.name }}</span>
             </v-toolbar-title>
@@ -21,7 +22,7 @@
               bottom
               right
               fab
-            ><img src="/githubLogo.png" alt="" style="width:50px;height:50px"></v-btn>
+            ><img src="/githubLogo.png" style="width:50px;height:50px"></v-btn>
         </v-content>
     </v-app>
 </template>

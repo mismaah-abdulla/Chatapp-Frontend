@@ -1,6 +1,12 @@
 <template>
     <v-container>
-        <v-layout justify-center>
+        <v-layout justify-center wrap>
+            <v-flex xs12 text-xs-center>
+                <v-icon x-large color="primary">message</v-icon>
+                <h1 class="display-2 font-weight-regular mb-3">
+                Register
+                </h1>
+            </v-flex>
             <v-flex xs12 sm8 md4>
                 <v-card class="pa-3">
                     <v-form ref="form" v-model="valid" lazy-validation>

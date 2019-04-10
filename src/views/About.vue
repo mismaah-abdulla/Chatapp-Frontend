@@ -2,7 +2,7 @@
     <v-container>
         <v-layout text-xs-center wrap justify-center>
             <v-flex xs12>
-                <v-icon x-large color="blue">message</v-icon>
+                <v-icon x-large color="primary">message</v-icon>
                 <h1 class="display-2 font-weight-regular mb-3">
                 About
                 </h1>

@@ -9,7 +9,7 @@
                     <v-card-text class="pb-0">
                         <v-form>
                         <!-- icon is person -->
-                        <v-text-field color="secondary" prepend-icon="account_box" name="login" label="Username" type="text"></v-text-field>
+                        <v-text-field color="secondary" prepend-icon="pregnant_woman" name="login" label="Username" type="text"></v-text-field>
                         <v-text-field color="secondary" class="pt-0" id="password" prepend-icon="lock" name="password" label="Password" type="password"></v-text-field>
                         </v-form>
                     </v-card-text>

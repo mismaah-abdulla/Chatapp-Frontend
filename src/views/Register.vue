@@ -2,7 +2,7 @@
     <v-container>
         <v-layout justify-center wrap>
             <v-flex xs12 text-xs-center>
-                <v-icon x-large color="primary">message</v-icon>
+                <img src="../../Logo_deep_orange.png" alt="Deep Orange Logo">
                 <h1 class="display-2 font-weight-regular mb-3">
                 Register
                 </h1>
@@ -100,5 +100,8 @@ export default {
 </script>
 
 <style>
-
+img {
+    width:64px;
+    height:64px
+}
 </style>

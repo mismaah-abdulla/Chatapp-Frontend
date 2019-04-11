@@ -1,6 +1,6 @@
 <template>
         <v-layout justify-space-around>
-            <v-flex md6 xs6 offsetxs3>
+            <v-flex md6 xs12 sm8>
                 <v-card>
                     <div id="chatWindow" style="">
                         <div v-for="item in items" :key="item">
@@ -39,7 +39,6 @@ import { setTimeout } from 'timers';
 export default {
     data: () => ({
         header: 'Main',
-
         items: [
             {
                 username: 'Ali Connors',
@@ -76,7 +75,6 @@ export default {
             newMessage.message = this.message
             this.items.push(newMessage)
             this.message = ''
-            
         }
     }
 }
@@ -88,9 +86,11 @@ export default {
     margin-bottom: 10px;
     background-color: #E1F5FE;
     padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     max-width: 100%;
-    border-radius: 12px;
-    font-family: 
+    border-radius: 20px;
+    word-wrap: break-word;
 }
 #chatWindow {
     height:80vh;overflow: auto; padding:20px;

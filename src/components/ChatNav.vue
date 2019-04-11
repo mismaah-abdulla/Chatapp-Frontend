@@ -1,6 +1,6 @@
 <template>
     <v-layout>
-            <v-navigation-drawer absolute dark :width="250" permanent>
+            <v-navigation-drawer absolute dark :width="250">
                     <v-toolbar >
                         <v-list>
                             <v-list-tile>

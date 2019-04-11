@@ -1,28 +1,30 @@
 <template>
         <v-layout justify-space-around>
-            <v-flex md6>
+            <v-flex md6 xs6 offsetxs3>
                 <v-card>
-                        <v-list id="chatWindow" dense style="height:80vh;overflow: auto">
-                            <template v-for="item in items">
-                                <v-list-tile
-                                :key="item.title"
-                                avatar>
+                        <div id="chatWindow" dense style="">
 
-                                <v-list-tile-content>
-                                    <v-chip>
-                                    <v-list-tile-sub-title>
-                                        <span class='secondary--text'>
+                                <div v-for="item in items">
+                                    <div class="chatBubble">
+                                        <span v-if="item.username == 'Me'" class='primary--text'>
+                                            {{item.username}}
+                                        </span>
+                                        <span v-else class='grey--text'>
                                             {{item.username}}
                                         </span> &mdash;
                                         <span class="black--text">
                                             {{item.message}}
-                                        </span>  </v-list-tile-sub-title>
-                                    </v-chip>
-                                </v-list-tile-content>
-                                </v-list-tile>
+                                        </span>
+                                    </div>
+                                    <br />
+                                    <!-- <v-chip>
+                                    <v-list-tile-sub-title>
+                                          </v-list-tile-sub-title>
+                                    </v-chip> -->
+                                </div>
+
                                 
-                            </template>
-                            </v-list>
+                            </div>
                         <v-text-field
                             append-icon="send"
                             @click:append="submit"
@@ -44,6 +46,7 @@ import { setTimeout } from 'timers';
 export default {
     data: () => ({
         header: 'Main',
+
         items: [
             {
                 username: 'Ali Connors',
@@ -87,5 +90,16 @@ export default {
 </script>
 
 <style>
-
+.chatBubble {
+    display: inline-block;
+    margin-bottom: 10px;
+    background-color: #E1F5FE;
+    padding: 10px;
+    max-width: 100%;
+    border-radius: 12px;
+    font-family: 
+}
+#chatWindow {
+    height:80vh;overflow: auto; padding:20px;
+}
 </style>

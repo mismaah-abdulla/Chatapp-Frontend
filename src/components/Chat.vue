@@ -2,11 +2,6 @@
         <v-layout justify-space-around>
             <v-flex md6>
                 <v-card>
-                    <!-- <v-list dense class="pa-0" v-for="a in [,,,,]" two-line> -->
-                    <!-- <v-subheader
-                        class="primary--text headline">
-                        {{ header }}
-                    </v-subheader> -->
                         <v-list dense>
                             <template v-for="item in items">
                                 <v-list-tile
@@ -27,7 +22,6 @@
                                 </v-list-tile>
                             </template>
                             </v-list>
-                    <!-- </v-list> -->
                 </v-card>
             </v-flex>
         </v-layout>

@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import { setTimeout } from 'timers';
 export default {
     data: () => ({
         header: 'Main',
@@ -64,8 +65,11 @@ export default {
 
     watch: {
         items: function (val) {
-            let chatWindow = document.getElementById("chatWindow")
-            chatWindow.scrollTop = chatWindow.scrollHeight
+            setTimeout(() => {
+                let chatWindow = document.getElementById("chatWindow")
+                chatWindow.scrollTop = chatWindow.scrollHeight
+            }, 50) 
+            
         }
     },
 

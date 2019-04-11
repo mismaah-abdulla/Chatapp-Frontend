@@ -1,6 +1,6 @@
 <template>
     <v-layout>
-            <v-navigation-drawer v-model="drawer" fixed app clipped dark :width="280" class="hidden-sm-and-down">
+            <v-navigation-drawer v-on:drawer-click="drawerClick()" v-model="drawer" fixed app clipped dark :width="280" class="hidden-sm-and-down">
                     <v-toolbar >
                         <v-list>
                             <v-list-tile>
@@ -43,8 +43,13 @@
           { title: 'Chat 2', icon: 'question_answer', current: false },
           { title: 'Chat 3', icon: 'question_answer', current: false }
         ],
-        right: null
+        drawer: null
       }
+    },
+    methods: {
+        drawerClick () {
+            drawer = true
+        }
     }
   }
 </script>

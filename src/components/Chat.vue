@@ -2,29 +2,22 @@
         <v-layout justify-space-around>
             <v-flex md6 xs6 offsetxs3>
                 <v-card>
-                        <div id="chatWindow" dense style="">
-
-                                <div v-for="item in items">
-                                    <div class="chatBubble">
-                                        <span v-if="item.username == 'Me'" class='primary--text'>
-                                            {{item.username}}
-                                        </span>
-                                        <span v-else class='grey--text'>
-                                            {{item.username}}
-                                        </span> &mdash;
-                                        <span class="black--text">
-                                            {{item.message}}
-                                        </span>
-                                    </div>
-                                    <br />
-                                    <!-- <v-chip>
-                                    <v-list-tile-sub-title>
-                                          </v-list-tile-sub-title>
-                                    </v-chip> -->
-                                </div>
-
-                                
+                    <div id="chatWindow" style="">
+                        <div v-for="item in items" :key="item">
+                            <div class="chatBubble">
+                                <span v-if="item.username == 'Me'" class='primary--text'>
+                                    {{item.username}}
+                                </span>
+                                <span v-else class='grey--text'>
+                                    {{item.username}}
+                                </span> &mdash;
+                                <span class="black--text">
+                                    {{item.message}}
+                                </span>
                             </div>
+                            <br />
+                        </div>
+                    </div>
                         <v-text-field
                             append-icon="send"
                             @click:append="submit"

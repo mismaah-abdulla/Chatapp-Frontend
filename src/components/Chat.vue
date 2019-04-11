@@ -3,10 +3,10 @@
             <v-flex md6>
                 <v-card>
                     <!-- <v-list dense class="pa-0" v-for="a in [,,,,]" two-line> -->
-                    <v-subheader
+                    <!-- <v-subheader
                         class="primary--text headline">
                         {{ header }}
-                    </v-subheader>
+                    </v-subheader> -->
                         <v-list dense>
                             <template v-for="item in items">
                                 <v-list-tile
@@ -16,9 +16,12 @@
                                 <v-list-tile-content>
                                     <v-chip>
                                     <v-list-tile-sub-title>
-                                        <span class='text--primary'>
+                                        <span class='secondary--text'>
                                             {{item.username}}
-                                        </span> &mdash; {{item.message}} </v-list-tile-sub-title>
+                                        </span> &mdash;
+                                        <span class="black--text">
+                                            {{item.message}}
+                                        </span>  </v-list-tile-sub-title>
                                     </v-chip>
                                 </v-list-tile-content>
                                 </v-list-tile>

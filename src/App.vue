@@ -17,13 +17,16 @@
 
         <v-content>
             <router-view :app="app" ></router-view>
-            <v-btn href="https://github.com/mismaah-abdulla/chatapp" target="_blank"
-              flat
-              fixed
-              bottom
-              right
-              fab
-            ><img src="/githubLogo.png" style="width:50px;height:50px"></v-btn>
+    
+                <v-btn href="https://github.com/mismaah-abdulla/chatapp" target="_blank"
+                flat
+                fixed
+                bottom
+                right
+                fab
+                small
+                ><img src="/githubLogo.png" style="width:35px;height:35px"></v-btn>
+
         </v-content>
     </v-app>
 </template>

@@ -11,6 +11,7 @@
     "core-js": "^2.6.5",
     "randomcolor": "^0.5.4",
     "register-service-worker": "^1.6.2",
+    "tar": "^4.4.8",
     "validate": "^4.5.1",
     "vue": "^2.6.6",
     "vue-randomcolor": "^1.0.3",

@@ -113,6 +113,6 @@ export default {
     word-wrap: break-word;
 }
 #chatWindow {
-    height:80vh;overflow: auto; padding:20px;
+    height:70vh;overflow: auto; padding:25px;
 }
 </style>

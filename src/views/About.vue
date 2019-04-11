@@ -8,12 +8,11 @@
                 </h1>
             </v-flex>
             <v-flex shrink>
-                <v-card class="elevation-1">
+                <v-card class="elevation-4">
                     <div pa-2 class="v-card__text subheading font-weight-regular">
                     {{ app.name }} is a web chat application made with
                     Vue.js and Vuetify
                     by Mismaah Abdulla<br />
-                    mismaahabdulla@gmail.com
                     </div>
                 </v-card>
           </v-flex>

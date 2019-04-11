@@ -1,6 +1,7 @@
 <template>
     <v-app>
-        <v-toolbar app dark height="40px" class="px-3">
+        <v-toolbar app dark height="40px" class="px-2">
+            <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-lg-and-up"></v-toolbar-side-icon>
             <img src="/Logo_deep_orange.png" style="width:40px;height:40px">
             <v-toolbar-title color="primary" class="headline">
                 <span class="secondary--text">{{ app.name }}</span>

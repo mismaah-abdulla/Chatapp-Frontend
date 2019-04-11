@@ -1,6 +1,6 @@
 <template>
         <v-layout justify-space-around>
-            <v-flex md6 xs12 sm8>
+            <v-flex md6 xs12 sm10>
                 <v-card>
                     <div id="chatWindow">
                         <div v-for="item in items" :key="item">
@@ -41,16 +41,24 @@ export default {
         header: 'Main',
         items: [
             {
-                username: 'Ali Connors',
+                username: 'Shaaik',
                 message: "I'll be in your neighborhood doing errands this weekend. Do you want to hang out?"
             },
             {
-                username: 'Youshau',
+                username: 'Shimaanath',
                 message: "Wish I could come, but I'm out of town this weekend."
             },
             {
-                username: 'Sandra Adams',
+                username: 'Mismaah',
                 message: "Do you have Paris recommendations? Have you ever been? "
+            },
+            {
+                username: 'Shamis',
+                message: 'No'
+            },
+            {
+                username: 'Shamis',
+                message: 'ynes'
             }
             ],
         message: ''

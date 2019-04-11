@@ -1,6 +1,6 @@
 <template>
     <v-layout>
-            <v-navigation-drawer absolute dark :width="250">
+            <v-navigation-drawer v-model="drawer" fixed app clipped dark :width="280" class="hidden-sm-and-down">
                     <v-toolbar >
                         <v-list>
                             <v-list-tile>
@@ -30,6 +30,7 @@
                         </v-list-tile>
                     </v-list>
             </v-navigation-drawer>
+            </v-btn>
     </v-layout>
 </template>
 

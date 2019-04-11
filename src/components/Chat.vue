@@ -2,7 +2,7 @@
         <v-layout justify-space-around>
             <v-flex md6>
                 <v-card>
-                        <v-list dense>
+                        <v-list id="chatWindow" dense style="height:80vh;overflow: auto">
                             <template v-for="item in items">
                                 <v-list-tile
                                 :key="item.title"
@@ -24,20 +24,15 @@
                             </template>
                             </v-list>
                         <v-text-field
-                            class="pb-3"
+                            append-icon="send"
+                            @click:append="submit"
+                            class="pb-3 pl-4 pr-5"
                             counter="70"
                             placeholder="Send a message"
                             v-model="message"
-                            :append-icon="marker ? 'mdi-map-marker' : 'mdi-map-marker-off'"
-                            :append-outer-icon="message ? 'mdi-send' : 'mdi-microphone'"
-                            :prepend-icon="icon"
-                            clear-icon="mdi-close-circle"
                             clearable
                             type="text"
-                            @click:append="toggleMarker"
-                            @click:append-outer="sendMessage"
-                            @click:prepend="changeIcon"
-                            @click:clear="clearMessage"
+                            v-on:keyup.enter="submit"
                         ></v-text-field>
                 </v-card>
             </v-flex>
@@ -61,47 +56,28 @@ export default {
                 username: 'Sandra Adams',
                 message: "Do you have Paris recommendations? Have you ever been? "
             }
-        ],
-        password: 'Password',
-        show: false,
-        marker: true,
-        iconIndex: 0,
-        icons: [
-            'mdi-emoticon',
-            'mdi-emoticon-cool',
-            'mdi-emoticon-dead',
-            'mdi-emoticon-excited',
-            'mdi-emoticon-happy',
-            'mdi-emoticon-neutral',
-            'mdi-emoticon-sad',
-            'mdi-emoticon-tongue'
-        ]
+            ],
+        message: ''
         }),
     computed: {
-      icon () {
-        return this.icons[this.iconIndex]
-      }
+    },
+
+    watch: {
+        items: function (val) {
+            let chatWindow = document.getElementById("chatWindow")
+            chatWindow.scrollTop = chatWindow.scrollHeight
+        }
     },
 
     methods: {
-      toggleMarker () {
-        this.marker = !this.marker
-      },
-      sendMessage () {
-        this.resetIcon()
-        this.clearMessage()
-      },
-      clearMessage () {
-        this.message = ''
-      },
-      resetIcon () {
-        this.iconIndex = 0
-      },
-      changeIcon () {
-        this.iconIndex === this.icons.length - 1
-          ? this.iconIndex = 0
-          : this.iconIndex++
-      }
+        submit () {
+            let newMessage = {}
+            newMessage.username = 'Me'
+            newMessage.message = this.message
+            this.items.push(newMessage)
+            this.message = ''
+            
+        }
     }
 }
 </script>

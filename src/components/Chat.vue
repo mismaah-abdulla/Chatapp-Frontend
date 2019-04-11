@@ -2,13 +2,13 @@
         <v-layout justify-space-around>
             <v-flex md6 xs12 sm8>
                 <v-card>
-                    <div id="chatWindow" style="">
+                    <div id="chatWindow">
                         <div v-for="item in items" :key="item">
                             <div class="chatBubble">
-                                <span v-if="item.username == 'Me'" class='primary--text'>
+                                <span v-if="item.username == 'Me'" class='primary--text font-weight-medium'>
                                     {{item.username}}
                                 </span>
-                                <span v-else class='grey--text'>
+                                <span v-else :style="{color:stringToColor(item.username)}">
                                     {{item.username}}
                                 </span> &mdash;
                                 <span class="black--text">
@@ -75,6 +75,18 @@ export default {
             newMessage.message = this.message
             this.items.push(newMessage)
             this.message = ''
+        },
+        stringToColor (str) {
+            var hash = 0;
+            for (var i = 0; i < str.length; i++) {
+                hash = str.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            var color = '#';
+            for (var i = 0; i < 3; i++) {
+                var value = (hash >> (i * 8)) & 0xFF;
+                color += ('00' + value.toString(16)).substr(-2);
+            }
+            return color;
         }
     }
 }

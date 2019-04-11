@@ -3,7 +3,7 @@
         <v-toolbar app dark height="40px" class="px-3">
             <img src="/Logo_deep_orange.png" style="width:40px;height:40px">
             <v-toolbar-title color="primary" class="headline">
-                <span>{{ app.name }}</span>
+                <span class="secondary--text">{{ app.name }}</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn flat color="accent" href="#/">

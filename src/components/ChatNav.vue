@@ -24,7 +24,8 @@
                             </v-list-tile-action>
 
                             <v-list-tile-content>
-                            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                            <v-list-tile-title v-if="item.current" class="primary--text">{{ item.title }}</v-list-tile-title>
+                            <v-list-tile-title v-else>{{ item.title }}</v-list-tile-title>
                             </v-list-tile-content>
                         </v-list-tile>
                     </v-list>
@@ -37,9 +38,9 @@
     data () {
       return {
         items: [
-          { title: 'Main', icon: 'dashboard' },
-          { title: 'Chat 2', icon: 'question_answer' },
-          { title: 'Chat 3', icon: 'question_answer' }
+          { title: 'Main', icon: 'dashboard', current: true },
+          { title: 'Chat 2', icon: 'question_answer', current: false },
+          { title: 'Chat 3', icon: 'question_answer', current: false }
         ],
         right: null
       }

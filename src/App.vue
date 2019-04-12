@@ -17,7 +17,7 @@
 
         <v-content>
             <router-view :app="app" ></router-view>
-    
+
                 <v-btn href="https://github.com/mismaah-abdulla/chatapp" target="_blank"
                 flat
                 fixed
@@ -47,4 +47,3 @@ export default {
 <style>
 
 </style>
-

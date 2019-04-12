@@ -1,6 +1,6 @@
 <template>
         <v-layout justify-space-around>
-            <v-flex md6 xs12 sm10>
+            <v-flex md6 xs12 sm10 offset-md0>
                 <v-card>
                     <div id="chatWindow">
                         <div v-for="item in items" :key="item">
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { setTimeout } from 'timers';
+import { setTimeout } from 'timers'
 export default {
     data: () => ({
         header: 'Main',
@@ -50,7 +50,7 @@ export default {
             },
             {
                 username: 'Mismaah',
-                message: "Do you have Paris recommendations? Have you ever been? "
+                message: 'Do you have Paris recommendations? Have you ever been? '
             },
             {
                 username: 'Shamis',
@@ -60,19 +60,18 @@ export default {
                 username: 'Shamis',
                 message: 'ynes'
             }
-            ],
+        ],
         message: ''
-        }),
+    }),
     computed: {
     },
 
     watch: {
         items: function (val) {
             setTimeout(() => {
-                let chatWindow = document.getElementById("chatWindow")
+                let chatWindow = document.getElementById('chatWindow')
                 chatWindow.scrollTop = chatWindow.scrollHeight
-            }, 50) 
-            
+            }, 50)
         }
     },
 
@@ -85,16 +84,16 @@ export default {
             this.message = ''
         },
         stringToColor (str) {
-            var hash = 0;
+            var hash = 0
             for (var i = 0; i < str.length; i++) {
-                hash = str.charCodeAt(i) + ((hash << 5) - hash);
+                hash = str.charCodeAt(i) + ((hash << 5) - hash)
             }
-            var color = '#';
-            for (var i = 0; i < 3; i++) {
-                var value = (hash >> (i * 8)) & 0xFF;
-                color += ('00' + value.toString(16)).substr(-2);
+            var color = '#'
+            for (var j = 0; j < 3; j++) {
+                var value = (hash >> (j * 8)) & 0xFF
+                color += ('00' + value.toString(16)).substr(-2)
             }
-            return color;
+            return color
         }
     }
 }

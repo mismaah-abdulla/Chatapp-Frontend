@@ -16,9 +16,8 @@
                     <v-list dense class="pa-0">
                         <v-list-tile
                             v-for="item in items"
-                            :key="item.title"
-                            @click=""
-                        >
+                            :key="item.title">
+                            <!-- @click="" -->
                             <v-list-tile-action>
                             <v-icon>{{ item.icon }}</v-icon>
                             </v-list-tile-action>
@@ -30,26 +29,25 @@
                         </v-list-tile>
                     </v-list>
             </v-navigation-drawer>
-            </v-btn>
     </v-layout>
 </template>
 
 <script>
-  export default {
+export default {
     data () {
-      return {
-        items: [
-          { title: 'Main', icon: 'dashboard', current: true },
-          { title: 'Chat 2', icon: 'question_answer', current: false },
-          { title: 'Chat 3', icon: 'question_answer', current: false }
-        ],
-        drawer: null
-      }
+        return {
+            items: [
+                { title: 'Main', icon: 'dashboard', current: true },
+                { title: 'Chat 2', icon: 'question_answer', current: false },
+                { title: 'Chat 3', icon: 'question_answer', current: false }
+            ],
+            drawer: null
+        }
     },
     methods: {
         drawerClick () {
             drawer = true
         }
     }
-  }
+}
 </script>

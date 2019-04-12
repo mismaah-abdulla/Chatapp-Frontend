@@ -1,6 +1,6 @@
 <template>
     <v-layout>
-            <v-navigation-drawer v-on:drawer-click="drawerClick()" v-model="drawer" fixed app clipped dark :width="280" class="hidden-sm-and-down">
+            <v-navigation-drawer v-on:drawer-click="drawerClick" v-model="drawer" fixed app clipped dark :width="280" class="hidden-sm-and-down">
                     <v-toolbar >
                         <v-list>
                             <v-list-tile>
@@ -46,7 +46,7 @@ export default {
     },
     methods: {
         drawerClick () {
-            drawer = true
+            this.drawer = !this.drawer
         }
     }
 }

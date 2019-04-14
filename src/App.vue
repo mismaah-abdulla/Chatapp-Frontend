@@ -16,7 +16,7 @@
         </v-toolbar>
 
         <v-content>
-            <v-navigation-drawer v-if="$route.path==='/Chats'" v-model="drawer" fixed app clipped dark :width="280" class="hidden-sm-and-down">
+            <v-navigation-drawer v-if="$route.path==='/Chats'" v-model="drawer" fixed app clipped dark :width="280" >
                     <v-toolbar >
                         <v-list>
                             <v-list-tile>
@@ -46,6 +46,7 @@
             </v-navigation-drawer>
             <router-view :app="app" ></router-view>
             <v-btn href="https://github.com/mismaah-abdulla/chatapp" target="_blank"
+            v-if="$route.path!=='/Chats'"
             flat
             fixed
             bottom

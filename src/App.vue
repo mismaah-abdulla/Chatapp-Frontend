@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <v-toolbar app dark height="40px" class="px-2">
-            <v-toolbar-side-icon  v-if="$route.path==='/Chats'"  @click="drawer = !drawer" class="hidden-lg-and-up"></v-toolbar-side-icon>
+            
             <img src="/Logo_deep_orange.png" style="width:40px;height:40px">
             <v-toolbar-title color="primary" class="headline">
                 <span class="secondary--text">{{ app.name }}</span>
@@ -13,6 +13,7 @@
             <v-btn flat color="accent" href="#/about">
                 About
             </v-btn>
+            <v-toolbar-side-icon v-if="$route.path==='/Chats'"  @click="drawer = !drawer" class="hidden-lg-and-up"></v-toolbar-side-icon>
         </v-toolbar>
 
         <v-content>

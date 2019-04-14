@@ -1,6 +1,6 @@
 <template>
         <v-layout justify-space-around>
-            <v-flex md6 xs12 sm10 offset-md0>
+            <v-flex xl6 lg6 md8 xs12 sm10>
                 <v-card>
                     <div id="chatWindow">
                         <div v-for="item in items" :key="item">
@@ -112,7 +112,7 @@ export default {
     word-wrap: break-word;
 }
 #chatWindow {
-    height: calc(100vh - 200px);
+    height: calc(100vh - 180px);
     overflow:auto;
     padding:25px;
 }

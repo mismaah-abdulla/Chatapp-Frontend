@@ -16,7 +16,7 @@
         </v-toolbar>
 
         <v-content>
-            <v-navigation-drawer v-if="$route.path==='/Chats'" v-model="drawer" fixed app clipped dark :width="280" >
+            <v-navigation-drawer v-if="$route.path==='/Chats'" v-model="drawer" fixed app right clipped dark :width="280" >
                     <v-toolbar >
                         <v-list>
                             <v-list-tile>

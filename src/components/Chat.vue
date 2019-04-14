@@ -112,6 +112,8 @@ export default {
     word-wrap: break-word;
 }
 #chatWindow {
-    height:70vh;overflow: auto; padding:25px;
+    flex-direction: column;
+    overflow:auto;
+    padding:25px;
 }
 </style>

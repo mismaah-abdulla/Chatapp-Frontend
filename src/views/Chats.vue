@@ -1,18 +1,17 @@
 <template>
     <v-container>
         <Chat />
-        <ChatNav />
+        <!-- <ChatNav /> -->
     </v-container>
 </template>
 
 <script>
 import Chat from '../components/Chat'
-import ChatNav from '../components/ChatNav'
+// import ChatNav from '../components/ChatNav'
 
 export default {
     components: {
-        Chat,
-        ChatNav
+        Chat
     }
 }
 </script>

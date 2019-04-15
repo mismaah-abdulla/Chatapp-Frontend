@@ -102,7 +102,6 @@ export default {
         },
         selectuser () {
             this.username = this.userselect
-
         },
         stringToColor (str) {
             var hash = 0

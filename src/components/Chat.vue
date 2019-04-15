@@ -30,14 +30,14 @@
                         ></v-text-field>
                         <v-text-field v-else
                             append-icon="send"
-                            @click:append="submit"
+                            @click:append="send"
                             class="pb-3 pl-4 pr-5"
                             counter="70"
                             placeholder="Send a message"
                             v-model="message"
                             clearable
                             type="text"
-                            v-on:keyup.enter="submit"
+                            v-on:keyup.enter="send"
                         ></v-text-field>
                 </v-card>
             </v-flex>
@@ -55,20 +55,19 @@ export default {
         msgs: [
         ]
     }),
-    // created: function() {
-    //     var self = this;
-    //     this.ws = new WebSocket('ws://' + window.location.host + '/ws');
-    //     this.ws.addEventListener('message', function(e) {
-    //         var msg = JSON.parse(e.data);
-    //         let newMessage = {}
-    //         newMessage.username = msg.username
-    //         newMessage.message = msg.message
-    //         this.msgs.push(newMessage)
-    //     });
-    // },
+    created() {
+        this.ws = new WebSocket('ws://' + window.location.host + '/ws');
+        this.ws.addEventListener('message', (e) => {
+            var msg = JSON.parse(e.data);
+            let newMessage = {}
+            newMessage.username = msg.username
+            newMessage.message = msg.message
+            this.msgs.push(newMessage)
+        });
+    },
 
     watch: {
-        msgs: function (val) {
+        msgs (val) {
             setTimeout(() => {
                 let chatWindow = document.getElementById('chatWindow')
                 chatWindow.scrollTop = chatWindow.scrollHeight
@@ -77,29 +76,24 @@ export default {
     },
 
     methods: {
-        // send: function() {
-        //     if (this.message != '') {
-        //         this.ws.send(
-        //             JSON.stringify({
-        //                 username: this.username,
-        //                 message: $('<p>').html(this.newMsg).text()
-        //             })
-        //         )
-        //         this.message = ''
-        //     }
-        // },
-        // join: function () {
-        //     if (!this.username) {
-
-        //     }
-        // },
-        submit () {
-            let newMessage = {}
-            newMessage.username = this.username
-            newMessage.message = this.message
-            this.msgs.push(newMessage)
-            this.message = ''
+        send() {
+            if (this.message != '') {
+                this.ws.send(
+                    JSON.stringify({
+                        username: this.username,
+                        message: this.message
+                    })
+                )
+                this.message = ''
+            }
         },
+        // submit () {
+        //     let newMessage = {}
+        //     newMessage.username = this.username
+        //     newMessage.message = this.message
+        //     this.msgs.push(newMessage)
+        //     this.message = ''
+        // },
         selectuser () {
             this.username = this.userselect
         },

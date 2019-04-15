@@ -3,16 +3,16 @@
             <v-flex xl6 lg6 md8 xs12 sm10>
                 <v-card>
                     <div id="chatWindow">
-                        <div v-for="item in items" :key="item">
+                        <div v-for="msg in msgs" :key="msg">
                             <div class="chatBubble">
-                                <span v-if="item.username == 'Me'" class='primary--text font-weight-medium'>
-                                    {{item.username}}
+                                <span v-if="msg.username == 'Me'" class='primary--text font-weight-medium'>
+                                    {{msg.username}}
                                 </span>
-                                <span v-else :style="{color:stringToColor(item.username)}">
-                                    {{item.username}}
+                                <span v-else :style="{color:stringToColor(msg.username)}">
+                                    {{msg.username}}
                                 </span> &mdash;
                                 <span class="black--text">
-                                    {{item.message}}
+                                    {{msg.message}}
                                 </span>
                             </div>
                             <br />
@@ -39,7 +39,7 @@ import { setTimeout } from 'timers'
 export default {
     data: () => ({
         header: 'Main',
-        items: [
+        msgs: [
             {
                 username: 'Shaaik',
                 message: "I'll be in your neighborhood doing errands this weekend. Do you want to hang out?"
@@ -67,7 +67,7 @@ export default {
     },
 
     watch: {
-        items: function (val) {
+        msgs: function (val) {
             setTimeout(() => {
                 let chatWindow = document.getElementById('chatWindow')
                 chatWindow.scrollTop = chatWindow.scrollHeight
@@ -80,7 +80,7 @@ export default {
             let newMessage = {}
             newMessage.username = 'Me'
             newMessage.message = this.message
-            this.items.push(newMessage)
+            this.msgs.push(newMessage)
             this.message = ''
         },
         stringToColor (str) {

@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <v-toolbar app dark height="40px" class="px-2">
-            
+
             <img src="/Logo_deep_orange.png" style="width:40px;height:40px">
             <v-toolbar-title color="primary" class="headline">
                 <span class="secondary--text">{{ app.name }}</span>
@@ -70,10 +70,10 @@ export default {
         app: data,
         drawer: null,
         chats: [
-                { title: 'Main', icon: 'dashboard', current: true },
-                { title: 'Chat 2', icon: 'question_answer', current: false },
-                { title: 'Chat 3', icon: 'question_answer', current: false }
-            ]
+            { title: 'Main', icon: 'dashboard', current: true },
+            { title: 'Chat 2', icon: 'question_answer', current: false },
+            { title: 'Chat 3', icon: 'question_answer', current: false }
+        ]
     })
 }
 </script>

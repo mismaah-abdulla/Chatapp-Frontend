@@ -18,7 +18,17 @@
                             <br />
                         </div>
                     </div>
-                        <v-text-field
+                        <v-text-field v-if="!username"
+                            append-icon="send"
+                            @click:append="selectuser"
+                            class="pb-3 pl-4 pr-5"
+                            counter="10"
+                            placeholder="Enter a username"
+                            v-model="userselect"
+                            type="text"
+                            v-on:keyup.enter="selectuser"
+                        ></v-text-field>
+                        <v-text-field v-else
                             append-icon="send"
                             @click:append="submit"
                             class="pb-3 pl-4 pr-5"
@@ -39,32 +49,23 @@ import { setTimeout } from 'timers'
 export default {
     data: () => ({
         header: 'Main',
+        ws: null,
+        username: null,
+        message: '',
         msgs: [
-            {
-                username: 'Shaaik',
-                message: "I'll be in your neighborhood doing errands this weekend. Do you want to hang out?"
-            },
-            {
-                username: 'Shimaanath',
-                message: "Wish I could come, but I'm out of town this weekend."
-            },
-            {
-                username: 'Mismaah',
-                message: 'Do you have Paris recommendations? Have you ever been? '
-            },
-            {
-                username: 'Shamis',
-                message: 'No'
-            },
-            {
-                username: 'Shamis',
-                message: 'ynes'
-            }
-        ],
-        message: ''
+        ]
     }),
-    computed: {
-    },
+    // created: function() {
+    //     var self = this;
+    //     this.ws = new WebSocket('ws://' + window.location.host + '/ws');
+    //     this.ws.addEventListener('message', function(e) {
+    //         var msg = JSON.parse(e.data);
+    //         let newMessage = {}
+    //         newMessage.username = msg.username
+    //         newMessage.message = msg.message
+    //         this.msgs.push(newMessage)
+    //     });
+    // },
 
     watch: {
         msgs: function (val) {
@@ -76,12 +77,32 @@ export default {
     },
 
     methods: {
+        // send: function() {
+        //     if (this.message != '') {
+        //         this.ws.send(
+        //             JSON.stringify({
+        //                 username: this.username,
+        //                 message: $('<p>').html(this.newMsg).text()
+        //             })
+        //         )
+        //         this.message = ''
+        //     }
+        // },
+        // join: function () {
+        //     if (!this.username) {
+
+        //     }
+        // },
         submit () {
             let newMessage = {}
-            newMessage.username = 'Me'
+            newMessage.username = this.username
             newMessage.message = this.message
             this.msgs.push(newMessage)
             this.message = ''
+        },
+        selectuser () {
+            this.username = this.userselect
+
         },
         stringToColor (str) {
             var hash = 0

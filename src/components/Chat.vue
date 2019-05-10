@@ -55,15 +55,15 @@ export default {
         msgs: [
         ]
     }),
-    created() {
-        this.ws = new WebSocket('ws://' + window.location.host + '/ws');
+    created () {
+        this.ws = new WebSocket('ws://' + window.location.host + '/ws')
         this.ws.addEventListener('message', (e) => {
-            var msg = JSON.parse(e.data);
+            var msg = JSON.parse(e.data)
             let newMessage = {}
             newMessage.username = msg.username
             newMessage.message = msg.message
             this.msgs.push(newMessage)
-        });
+        })
     },
 
     watch: {
@@ -76,7 +76,7 @@ export default {
     },
 
     methods: {
-        send() {
+        send () {
             if (this.message != '') {
                 this.ws.send(
                     JSON.stringify({

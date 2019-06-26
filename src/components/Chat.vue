@@ -52,6 +52,7 @@ export default {
         header: 'Main',
         ws: null,
         username: null,
+        userselect: '',
         message: '',
         msgs: [
         ]

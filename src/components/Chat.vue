@@ -31,7 +31,7 @@
                         <!-- Change submit to send when building -->
                         <v-text-field v-else
                             append-icon="send"
-                            @click:append="submit" 
+                            @click:append="submit"
                             class="pb-3 pl-4 pr-5"
                             counter="70"
                             placeholder="Send a message"
@@ -57,7 +57,7 @@ export default {
         msgs: [
         ]
     }),
-    //Uncomment before building
+    // Uncomment before building
     // created () {
     //     this.ws = new WebSocket('ws://' + window.location.host + '/ws')
     //     this.ws.addEventListener('message', (e) => {
@@ -79,7 +79,7 @@ export default {
     },
 
     methods: {
-        //Uncomment send and comment submit before building
+        // Uncomment send and comment submit before building
         // send () {
         //     if (this.message != '') {
         //         this.ws.send(

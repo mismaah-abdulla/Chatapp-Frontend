@@ -3,7 +3,7 @@
             <v-flex xl6 lg6 md8 xs12 sm10>
                 <v-card>
                     <div id="chatWindow">
-                        <div v-for="msg in msgs" :key="msg.username">
+                        <div v-for="msg in msgs" :key="msg.messageID">
                             <div class="chatBubble">
                                 <span v-if="msg.username == 'Me'" class='primary--text font-weight-medium'>
                                     {{msg.username}}
@@ -54,6 +54,7 @@ export default {
         username: null,
         userselect: '',
         message: '',
+        messageID: 1,
         msgs: [
         ]
     }),
@@ -63,6 +64,7 @@ export default {
     //     this.ws.addEventListener('message', (e) => {
     //         var msg = JSON.parse(e.data)
     //         let newMessage = {}
+    //         newMessage.messageID = msg.messageID
     //         newMessage.username = msg.username
     //         newMessage.message = msg.message
     //         this.msgs.push(newMessage)
@@ -84,6 +86,7 @@ export default {
         //     if (this.message != '') {
         //         this.ws.send(
         //             JSON.stringify({
+        //                 ID: this.messageID,
         //                 username: this.username,
         //                 message: this.message
         //             })
@@ -93,10 +96,12 @@ export default {
         // },
         submit () {
             let newMessage = {}
+            newMessage.messageID = this.messageID
             newMessage.username = this.username
             newMessage.message = this.message
             this.msgs.push(newMessage)
             this.message = ''
+            this.messageID++
         },
         selectuser () {
             this.username = this.userselect

@@ -3,7 +3,7 @@
             <v-flex xl6 lg6 md8 xs12 sm10>
                 <v-card>
                     <div id="chatWindow">
-                        <div v-for="msg in msgs" :key="msg">
+                        <div v-for="msg in msgs" :key="msg.username">
                             <div class="chatBubble">
                                 <span v-if="msg.username == 'Me'" class='primary--text font-weight-medium'>
                                     {{msg.username}}
@@ -79,6 +79,7 @@ export default {
     },
 
     methods: {
+        //Uncomment send and comment submit before building
         // send () {
         //     if (this.message != '') {
         //         this.ws.send(

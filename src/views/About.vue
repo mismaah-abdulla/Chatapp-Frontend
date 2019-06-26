@@ -13,6 +13,9 @@
                     {{ app.name }} is a web chat application made with
                     Vue.js and Vuetify
                     by Mismaah Abdulla<br />
+                    <a href="https://twitter.com/MismaahAbdulla">Twitter</a> /
+                    <a href="https://github.com/mismaah-abdulla">GitHub</a>
+                    
                     </div>
                 </v-card>
           </v-flex>

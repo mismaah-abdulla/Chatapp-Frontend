@@ -10,6 +10,9 @@
             <v-btn flat color="accent" href="#/">
                 Home
             </v-btn>
+            <v-btn flat color="accent" href="#/Chats">
+                Chats
+            </v-btn>
             <v-btn flat color="accent" href="#/about">
                 About
             </v-btn>

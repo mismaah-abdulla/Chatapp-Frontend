@@ -65,7 +65,7 @@
 export default {
     data: () => ({
         valid: true,
-        // password: '',
+        password: '',
         name: '',
         nameRules: [
             v => !!v || 'Name is required',

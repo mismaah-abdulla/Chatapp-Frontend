@@ -7,20 +7,20 @@
                 <span class="secondary--text">{{ app.name }}</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn flat color="accent" href="#/">
+            <v-btn flat color="accent" to="/">
                 Home
             </v-btn>
-            <v-btn flat color="accent" href="#/Chats">
+            <v-btn flat color="accent" to="/chats">
                 Chats
             </v-btn>
-            <v-btn flat color="accent" href="#/about">
+            <v-btn flat color="accent" to="/about">
                 About
             </v-btn>
-            <v-toolbar-side-icon v-if="$route.path==='/Chats'"  @click="drawer = !drawer" class="hidden-lg-and-up"></v-toolbar-side-icon>
+            <v-toolbar-side-icon v-if="$route.path==='/chats'"  @click="drawer = !drawer" class="hidden-lg-and-up"></v-toolbar-side-icon>
         </v-toolbar>
 
         <v-content>
-            <v-navigation-drawer v-if="$route.path==='/Chats'" v-model="drawer" fixed app right clipped dark :width="280" >
+            <v-navigation-drawer v-if="$route.path==='/chats'" v-model="drawer" fixed app right clipped dark :width="280" >
                     <v-toolbar >
                         <v-list>
                             <v-list-tile>

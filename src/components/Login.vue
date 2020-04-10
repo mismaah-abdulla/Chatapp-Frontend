@@ -24,7 +24,7 @@
             <v-flex pb-0>
                 <p class="subheading font-weight-regular">
                     Don't have an account?
-                    <v-btn flat outline color="primary" href="#/Register">Register</v-btn>
+                    <v-btn flat outline color="primary" to="/register">Register</v-btn>
                 </p>
             </v-flex>
         </v-layout>

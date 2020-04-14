@@ -11,8 +11,7 @@
                 <v-card class="pa-3">
                     <v-form ref="form" v-model="valid" lazy-validation>
                         <v-text-field color="secondary"
-                        v-model="name"
-                        :counter="10"
+                        v-model="username"
                         :rules="nameRules"
                         label="Username"
                         required
@@ -43,7 +42,7 @@
                         <v-btn
                         :disabled="!valid"
                         color="primary"
-                        @click="validate"
+                        @click="register()"
                         >
                         Submit
                         </v-btn>
@@ -55,6 +54,15 @@
                         Clear
                         </v-btn>
                     </v-form>
+                    <v-alert dense dismissible :value="errorText" type="error">{{errorText}}</v-alert>
+                    <v-alert dense :value="success" type="success">
+                        <v-row align="center">
+                            <v-col class="grow">Successfully registered</v-col>
+                            <v-col class="shrink">
+                                <v-btn text small href="/">Go to login</v-btn>
+                            </v-col>
+                        </v-row>
+                    </v-alert>
                 </v-card>
             </v-flex>
         </v-layout>
@@ -64,12 +72,14 @@
 <script>
 export default {
     data: () => ({
-        valid: true,
+        errorText: null,
+        success: null,
+        valid: false,
         password: '',
-        name: '',
+        username: '',
         nameRules: [
             v => !!v || 'Name is required',
-            v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+            v => (v && v.length <= 20) || 'Name must be less than 20 characters'
         ],
         email: '',
         emailRules: [
@@ -87,14 +97,44 @@ export default {
     methods: {
         validate () {
             if (this.$refs.form.validate()) {
-                this.snackbar = true
             }
         },
         reset () {
             this.$refs.form.reset()
+            this.errorText = null
+            this.success = null
         },
         resetValidation () {
             this.$refs.form.resetValidation()
+        },
+        register () {
+            if(!this.valid)return
+            this.errorText = null
+            this.success = null
+            let user = {
+                Username: this.username,
+                Password: this.password,
+                Email: this.email
+            }
+            fetch('http://localhost:8000/api/register', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(resp => {
+                if (resp.ok) {
+                    this.reset()
+                    this.success = true
+                } else {
+                    return resp.text()
+                }
+            })
+            .then(result => {
+                this.errorText = result
+            })
         }
     }
 }

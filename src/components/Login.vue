@@ -54,29 +54,16 @@ export default {
         login () {
             this.errorText = null
             this.success = null
-            let user = {
-                Username: this.username,
-                Password: this.password,
-                Email: this.username
-            }
-            fetch('http://localhost:8000/api/login', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(user)
+            this.$store.dispatch("login", {
+                username: this.username,
+                password: this.password,
+                email: this.email
             })
-            .then(resp => {
-                if (resp.ok) {
-                    this.reset()
-                    this.success = true
-                } else {
-                    return resp.text()
-                }
+            .then(() => {
+                this.$router.push('/chats')
             })
-            .then(result => {
-                this.errorText = result
+            .catch(error => {
+                this.errorText = error
             })
         }
     }

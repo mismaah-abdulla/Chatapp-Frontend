@@ -47,11 +47,12 @@
 
 <script>
 import { setTimeout } from 'timers'
+import { mapGetters } from 'vuex'
+import { hostname } from 'os'
 export default {
     data: () => ({
         header: 'Main',
         ws: null,
-        username: null,
         userselect: '',
         message: '',
         messageID: 1,
@@ -60,7 +61,9 @@ export default {
     }),
     // Uncomment before building
     created () {
-        this.ws = new WebSocket('ws://' + 'localhost:8000' + '/ws')
+        console.log(this.username)
+        let hostname = location.hostname
+        this.ws = new WebSocket('ws://' + 'localhost' + '/ws')
         this.ws.addEventListener('message', (e) => {
             var msg = JSON.parse(e.data)
             let newMessage = {}
@@ -70,7 +73,9 @@ export default {
             this.msgs.push(newMessage)
         })
     },
-
+    computed: {
+        username: function(){return this.$store.getters.getCurrentUser}
+    },
     watch: {
         msgs (val) {
             setTimeout(() => {

@@ -1,11 +1,11 @@
 <template>
     <v-app>
         <v-toolbar app dark height="40px" class="px-2">
-
             <img src="/Logo_deep_orange.png" style="width:40px;height:40px">
             <v-toolbar-title color="primary" class="headline">
                 <span class="secondary--text">{{ app.name }}</span>
             </v-toolbar-title>
+            <span v-if="isLoggedIn">Logged in as {{username}}| <a @click="logout">Logout</a></span>
             <v-spacer></v-spacer>
             <v-btn flat color="accent" to="/">
                 Home
@@ -18,7 +18,6 @@
             </v-btn>
             <v-toolbar-side-icon v-if="$route.path==='/chats'"  @click="drawer = !drawer" class="hidden-lg-and-up"></v-toolbar-side-icon>
         </v-toolbar>
-
         <v-content>
             <v-navigation-drawer v-if="$route.path==='/chats'" v-model="drawer" fixed app right clipped dark :width="280" >
                     <v-toolbar >
@@ -69,6 +68,10 @@ export default {
     name: 'App',
     components: {
     },
+    computed : {
+      isLoggedIn : function(){return this.$store.getters.isLoggedIn},
+      username: function(){return this.$store.getters.getCurrentUser}
+    },
     data: () => ({
         app: data,
         drawer: null,
@@ -77,7 +80,27 @@ export default {
             { title: 'Chat 2', icon: 'question_answer', current: false },
             { title: 'Chat 3', icon: 'question_answer', current: false }
         ]
-    })
+    }),
+    methods: {
+        logout: function () {
+            this.$store.dispatch('logout')
+            .then(() => {
+            this.$router.push('/')
+            })
+        },
+        // stringToColor (str) {
+        //     var hash = 0
+        //     for (var i = 0; i < str.length; i++) {
+        //         hash = str.charCodeAt(i) + ((hash << 5) - hash)
+        //     }
+        //     var color = '#'
+        //     for (var j = 0; j < 3; j++) {
+        //         var value = (hash >> (j * 8)) & 0xFF
+        //         color += ('00' + value.toString(16)).substr(-2)
+        //     }
+        //     return color
+        // }
+    }
 }
 </script>
 

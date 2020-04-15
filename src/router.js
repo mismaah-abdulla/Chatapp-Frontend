@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Register from './views/Register.vue'
 import Chats from './views/Chats.vue'
 import About from './views/About.vue'
+import store from './store/store'
 
 Vue.use(Router)
 
@@ -26,7 +27,10 @@ const routes = [
     {
         path: '/chats',
         name: 'Chats',
-        component: Chats
+        component: Chats,
+        meta: { 
+            requiresAuth: true
+        }
     }
 ]
 
@@ -34,6 +38,18 @@ const router = new Router({
     mode: 'hash',
     base: process.env.BASE_URL,
     routes
+})
+
+router.beforeEach((to, from, next) => {
+    if(to.matched.some(record => record.meta.requiresAuth)) {
+      if (store.getters.isLoggedIn) {
+        next()
+        return
+      }
+      next('/') 
+    } else {
+      next() 
+    }
 })
 
 export default router

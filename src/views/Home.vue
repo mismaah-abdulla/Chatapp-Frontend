@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <Welcome />
-    <Login />
+    <Login v-if="!this.$store.getters.isLoggedIn" />
   </v-container>
 </template>
 

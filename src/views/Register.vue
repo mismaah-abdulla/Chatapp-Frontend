@@ -59,7 +59,7 @@
                         <v-row align="center">
                             <v-col class="grow">Successfully registered</v-col>
                             <v-col class="shrink">
-                                <v-btn text small href="/">Go to login</v-btn>
+                                <v-btn text small to="/">Go to login</v-btn>
                             </v-col>
                         </v-row>
                     </v-alert>

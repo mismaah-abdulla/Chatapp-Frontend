@@ -5,10 +5,7 @@
                     <div id="chatWindow">
                         <div v-for="msg in msgs" :key="msg.messageID">
                             <div class="chatBubble">
-                                <span v-if="msg.username == 'Me'" class='primary--text font-weight-medium'>
-                                    {{msg.username}}
-                                </span>
-                                <span v-else :style="{color:stringToColor(msg.username)}">
+                                <span :style="{color:stringToColor(msg.username)}">
                                     {{msg.username}}
                                 </span> &mdash;
                                 <span class="black--text">
@@ -28,7 +25,6 @@
                             type="text"
                             v-on:keyup.enter="selectuser"
                         ></v-text-field>
-                        <!-- Change submit to send when building -->
                         <v-text-field v-else
                             append-icon="send"
                             @click:append="send()"
@@ -56,14 +52,13 @@ export default {
         userselect: '',
         message: '',
         messageID: 1,
-        msgs: [
-        ]
+        msgs: []
     }),
     // Uncomment before building
     created () {
         console.log(this.username)
         let hostname = location.hostname
-        this.ws = new WebSocket('ws://' + 'localhost' + '/ws')
+        this.ws = new WebSocket('ws://' + 'localhost:8000' + '/ws')
         this.ws.addEventListener('message', (e) => {
             var msg = JSON.parse(e.data)
             let newMessage = {}
@@ -86,7 +81,6 @@ export default {
     },
 
     methods: {
-        // Uncomment send and comment submit before building
         send () {
             if (this.message !== '') {
                 this.ws.send(
@@ -99,15 +93,6 @@ export default {
                 this.message = ''
             }
         },
-        // submit () {
-        //     let newMessage = {}
-        //     newMessage.messageID = this.messageID
-        //     newMessage.username = this.username
-        //     newMessage.message = this.message
-        //     this.msgs.push(newMessage)
-        //     this.message = ''
-        //     this.messageID++
-        // },
         selectuser () {
             this.username = this.userselect
         },
@@ -122,6 +107,9 @@ export default {
                 color += ('00' + value.toString(16)).substr(-2)
             }
             return color
+        },
+        fetchMEssages() {
+
         }
     }
 }

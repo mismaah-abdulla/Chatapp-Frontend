@@ -4,7 +4,7 @@
                 <v-card>
                     <div id="chatWindow">
                         <div v-for="msg in msgs" :key="msg.messageID">
-                            <div class="chatBubble">
+                            <div :title="formatDate(msg.timestamp)" class="chatBubble">
                                 <span :style="{color:stringToColor(msg.username)}">
                                     {{msg.username}}
                                 </span> &mdash;
@@ -15,6 +15,7 @@
                             <br />
                         </div>
                     </div>
+                        <div class="text-center" v-if="loading"><v-progress-circular indeterminate></v-progress-circular></div>
                         <v-text-field
                             append-icon="send"
                             @click:append="send()"
@@ -40,10 +41,12 @@ export default {
         header: 'Main',
         ws: null,
         message: '',
-        msgs: []
+        msgs: [],
+        fetchError: null,
+        loading: null,
     }),
     created () {
-        console.log(this.username)
+        this.fetchMessages()
         let hostname = location.hostname
         this.ws = new WebSocket('ws://' + 'localhost:8000' + '/ws')
         this.ws.addEventListener('message', (e) => {
@@ -69,12 +72,14 @@ export default {
 
     methods: {
         send () {
-            if (this.message !== '') {
+            let moment = require('moment')
+            let trimmed = this.message.trim()
+            if (trimmed !== '') {
                 this.ws.send(
                     JSON.stringify({
-                        ID: this.messageID,
+                        timestamp: moment(new Date()).unix(),
                         username: this.username,
-                        message: this.message
+                        message: trimmed
                     })
                 )
                 this.message = ''
@@ -96,7 +101,27 @@ export default {
             return color
         },
         fetchMessages() {
-
+            this.loading = true
+            fetch('http://localhost:8000/api/messages')
+            .then(resp => {
+                if (resp.ok) {
+                    return resp.json()
+                }
+                else {
+                    this.fetchError = true
+                }
+            })
+            .then(data => {
+                this.msgs = data
+            })
+            .finally(() => {
+                this.loading = false
+            })
+        },
+        formatDate(timestamp){
+            let moment = require('moment')
+            let datetime = moment.unix(timestamp).format("YYYY-MM-DD HH:mm:ss")
+            return `${datetime.substring(0,10)} ${datetime.substring(11,19)}`
         }
     }
 }

@@ -41,14 +41,10 @@ const actions = {
     }
 }
 const mutations = {
-    // setAuth: (state, username) => {
-    //     state.currentUser.username = username
-    // },
     auth_success(state, data){
         state.status = 'success'
         state.token = data.token
         state.username = data.username
-        console.log(data.username)
     },
     auth_error(state){
         state.status = 'error'

@@ -15,17 +15,7 @@
                             <br />
                         </div>
                     </div>
-                        <v-text-field v-if="!username"
-                            append-icon="send"
-                            @click:append="selectuser"
-                            class="pb-3 pl-4 pr-5"
-                            counter="10"
-                            placeholder="Enter a username"
-                            v-model="userselect"
-                            type="text"
-                            v-on:keyup.enter="selectuser"
-                        ></v-text-field>
-                        <v-text-field v-else
+                        <v-text-field
                             append-icon="send"
                             @click:append="send()"
                             class="pb-3 pl-4 pr-5"
@@ -49,12 +39,9 @@ export default {
     data: () => ({
         header: 'Main',
         ws: null,
-        userselect: '',
         message: '',
-        messageID: 1,
         msgs: []
     }),
-    // Uncomment before building
     created () {
         console.log(this.username)
         let hostname = location.hostname
@@ -62,7 +49,7 @@ export default {
         this.ws.addEventListener('message', (e) => {
             var msg = JSON.parse(e.data)
             let newMessage = {}
-            newMessage.messageID = msg.messageID
+            newMessage.timestamp = msg.timestamp
             newMessage.username = msg.username
             newMessage.message = msg.message
             this.msgs.push(newMessage)
@@ -108,7 +95,7 @@ export default {
             }
             return color
         },
-        fetchMEssages() {
+        fetchMessages() {
 
         }
     }

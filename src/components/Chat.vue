@@ -47,8 +47,8 @@ export default {
     }),
     created () {
         this.fetchMessages()
-        let hostname = location.hostname
-        this.ws = new WebSocket('ws://' + 'localhost:8000' + '/ws')
+        let host = location.host
+        this.ws = new WebSocket('ws://' + host + '/ws')
         this.ws.addEventListener('message', (e) => {
             var msg = JSON.parse(e.data)
             let newMessage = {}
@@ -102,7 +102,8 @@ export default {
         },
         fetchMessages() {
             this.loading = true
-            fetch('http://localhost:8000/api/messages')
+            let host = location.host
+            fetch(`http://${host}/api/messages`)
             .then(resp => {
                 if (resp.ok) {
                     return resp.json()

@@ -8,9 +8,6 @@
                 <h1 class="display-2 font-weight-regular mb-3">
                 Welcome to <span class="primary--text">{{ app.name }}</span>
                 </h1>
-                <p class="subheading font-weight-regular">
-                {{ app.description }}
-                </p>
           </v-flex>
         </v-layout>
     </v-container>

@@ -116,8 +116,8 @@ export default {
                 Password: this.password,
                 Email: this.email
             }
-            let hostname = location.hostname
-            fetch(`http://localhost:8000/api/register`, {
+            let host = location.host
+            fetch(`http://${host}/api/register`, {
                 method: 'post',
                 headers: {
                     'Accept': 'application/json',

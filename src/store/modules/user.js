@@ -13,8 +13,8 @@ const actions = {
     login: ({commit}, payload) => {
         return new Promise((resolve, reject) => {
             commit('auth_request')
-            let hostname = location.hostname
-            axios({url: `http://localhost:8000/api/login`, data: payload, method: 'POST' })
+            let host = location.host
+            axios({url: `http://${host}/api/login`, data: payload, method: 'POST' })
             .then(resp => {
                 const token = resp.data.token
                 const username = resp.data.username

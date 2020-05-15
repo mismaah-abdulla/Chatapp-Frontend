@@ -48,7 +48,7 @@
                     </v-list>
             </v-navigation-drawer>
             <router-view :app="app" ></router-view>
-            <v-btn href="https://github.com/mismaah-abdulla/chatapp" target="_blank"
+            <v-btn href="https://github.com/mismaah/Chatapp-Frontend" target="_blank"
             v-if="$route.path!=='/Chats'"
             flat
             fixed

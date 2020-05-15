@@ -1,5 +1,5 @@
 # chatapp
-Backend repo - https://github.com/mismaah-abdulla/Chatapp-Backend
+Backend repo - https://github.com/mismaah/Chatapp-Backend
 
 Live on http://128.199.105.161/#/Chats if the server is still running.
 

@@ -10,10 +10,8 @@
             <v-flex shrink>
                 <v-card class="elevation-4">
                     <div pa-2 class="v-card__text subheading font-weight-regular">
-                    {{ app.name }} is a web chat application made with
-                    Vue.js and Vuetify
-                    by Mismaah Abdulla<br />
-                    <a href="https://twitter.com/MismaahAbdulla">Twitter</a> /
+                    {{ app.name }} is a web chat application<br />
+                    <a href="https://twitter.com/mismaaah">My Twitter</a> /
                     <a href="https://github.com/mismaah-abdulla">GitHub</a>
 
                     </div>

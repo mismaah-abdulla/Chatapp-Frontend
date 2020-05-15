@@ -11,7 +11,8 @@
                 <v-card class="elevation-4">
                     <div pa-2 class="v-card__text subheading font-weight-regular">
                     {{ app.name }} is a web chat application<br />
-                    <a href="https://twitter.com/mismaaah">My Twitter</a> /
+                    Mismaah Abdulla
+                    <a href="https://twitter.com/mismaaah">Twitter</a> /
                     <a href="https://github.com/mismaah-abdulla">GitHub</a>
 
                     </div>

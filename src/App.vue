@@ -5,7 +5,13 @@
             <v-toolbar-title color="primary" class="headline">
                 <span class="secondary--text">{{ app.name }}</span>
             </v-toolbar-title>
-            <span v-if="isLoggedIn">Logged in as {{username}}| <a @click="logout">Logout</a></span>
+            <span v-if="isLoggedIn">
+                <div class="userBubble">
+                    <span :style="{color:stringToColor(username)}">{{username}}</span>
+                    <span class="vert"> | </span>
+                    <a @click="logout">Logout</a>
+                </div>
+            </span>
             <v-spacer></v-spacer>
             <v-btn flat color="accent" to="/">
                 Home
@@ -88,22 +94,39 @@ export default {
             this.$router.push('/')
             })
         },
-        // stringToColor (str) {
-        //     var hash = 0
-        //     for (var i = 0; i < str.length; i++) {
-        //         hash = str.charCodeAt(i) + ((hash << 5) - hash)
-        //     }
-        //     var color = '#'
-        //     for (var j = 0; j < 3; j++) {
-        //         var value = (hash >> (j * 8)) & 0xFF
-        //         color += ('00' + value.toString(16)).substr(-2)
-        //     }
-        //     return color
-        // }
+        stringToColor (str) {
+            var hash = 0
+            for (var i = 0; i < str.length; i++) {
+                hash = str.charCodeAt(i) + ((hash << 5) - hash)
+            }
+            var color = '#'
+            for (var j = 0; j < 3; j++) {
+                var value = (hash >> (j * 8)) & 0xFF
+                color += ('00' + value.toString(16)).substr(-2)
+            }
+            return color
+        }
     }
 }
 </script>
 
 <style>
-
+.userBubble {
+    display: inline-block;
+    margin-bottom: 10px;
+    background-color: #E1F5FE;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 0 auto;
+    margin-left: 10px;
+    max-width: 100%;
+    border-radius: 10px;
+    word-wrap: break-word;
+    font-size: 12px;
+}
+.vert {
+    color: gray;
+    cursor: default;
+}
 </style>

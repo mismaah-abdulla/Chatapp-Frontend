@@ -12,8 +12,8 @@
                     <div pa-2 class="v-card__text subheading font-weight-regular">
                     {{ app.name }} is a web chat application<br />
                     Mismaah Abdulla
-                    <a href="https://twitter.com/mismaaah">Twitter</a> /
-                    <a href="https://github.com/mismaah-abdulla">GitHub</a>
+                    <a href="https://twitter.com/mismaaah" target="_blank">Twitter</a> /
+                    <a href="https://github.com/mismaah" target="_blank">GitHub</a>
 
                     </div>
                 </v-card>
